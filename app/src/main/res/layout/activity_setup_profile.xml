@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#8EFF8F"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp"
+        android:layout_marginBottom="20sp"
+        android:layout_gravity="center"
+        android:src="@drawable/img"/>
+
+    <LinearLayout
+        android:id="@+id/whiteBox"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/profileImage"
+        android:background="@drawable/rounded_corner"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-medium"
+            android:text="Profile Info"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:text="Please set your name and optional profile picture"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/enterProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@android:drawable/editbox_background"
+            android:fontFamily="sans-serif"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            android:padding="15dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/setupProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10sp"
+        android:backgroundTint="@color/blue"
+        android:layout_below="@id/whiteBox"
+        android:text="Setup Profile"
+        android:textSize="20sp"
+        android:layout_marginBottom="10sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium" />
+
+</RelativeLayout>

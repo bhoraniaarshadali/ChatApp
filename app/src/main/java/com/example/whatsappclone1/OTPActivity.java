@@ -2,6 +2,7 @@ package com.example.whatsappclone1;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.mukesh.OnOtpCompletionListener;
+import com.mukesh.OtpView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,14 +42,14 @@ public class OTPActivity extends AppCompatActivity {
         binding = ActivityOtpactivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.otpView.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+
         dialog = new ProgressDialog(this);
         dialog.setMessage("Sending OTP...");
         dialog.setCancelable(false);
         dialog.show();
-
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
-        binding.otpView.requestFocus();
 
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
         binding.phonenumberLabel.setText("Verify " + phoneNumber);
@@ -90,6 +92,9 @@ public class OTPActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(OTPActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(OTPActivity.this, SetupProfileActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
                         } else {
                             Toast.makeText(OTPActivity.this, "Error", Toast.LENGTH_SHORT).show();
                         }
