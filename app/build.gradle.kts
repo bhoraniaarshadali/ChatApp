@@ -40,14 +40,18 @@ dependencies {
 
     implementation(libs.firebase.auth)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
+
+
     implementation(platform(libs.firebase.bom))
     implementation(libs.android.otpview.pinview)
 
+    implementation(libs.circleimageview)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
