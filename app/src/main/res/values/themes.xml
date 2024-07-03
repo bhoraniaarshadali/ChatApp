@@ -5,5 +5,11 @@
         <item name="colorPrimary">@color/green</item>
     </style>
 
+    <style name="AppThemeMade" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
     <style name="Theme.WhatsappClone1" parent="Base.Theme.WhatsappClone1" />
 </resources>
